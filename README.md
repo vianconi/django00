@@ -23,31 +23,37 @@
 
 ## Cómo empezar
 
-1. **Clonar este repositorio**:
+1. **Haz un fork de este repositorio**:
+    - Dirígete a la página del repositorio en GitHub.
+    - Haz clic en el botón de **Fork** en la esquina superior derecha para crear una copia del repositorio en tu cuenta.
+
+2. **Clonar el repositorio**:
+    Una vez que hayas hecho un fork, clona el repositorio desde tu cuenta:
     ```bash
     git clone https://github.com/tu-usuario/my-tennis-club.git
     ```
 
-2. **Instalar dependencias**:
+3. **Instalar dependencias**:
     Asegúrate de tener Python instalado, luego instala los paquetes necesarios:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Migrar la base de datos**:
+4. **Migrar la base de datos**:
     Ejecuta las migraciones para configurar la base de datos:
     ```bash
     python manage.py migrate
     ```
 
-4. **Ejecutar el servidor de desarrollo**:
+5. **Ejecutar el servidor de desarrollo**:
     Inicia el servidor de desarrollo de Django:
     ```bash
     python manage.py runserver
     ```
 
-5. **Accede a la aplicación**:
+6. **Accede a la aplicación**:
     Abre tu navegador y visita [http://127.0.0.1:8000/](http://127.0.0.1:8000/) para ver la aplicación en acción.
+
 
 ## Contribuciones
 
