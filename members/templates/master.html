@@ -1,26 +1,38 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'mystyles.css' %}">
-        <title>
-            {% block title %}
-                
-            {% endblock %}
-            {% block head %}
-                
-            {% endblock %}
-        </title>
-    </head>
-    <body>
-        <div class="topnav">
-            <a href="/">HOME</a> |
-            <a href="/members">MEMBERS</a>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+<!-- Barra de navegación con navbar de Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link link-light" href="/members">Members</a>
+                </li>
+            </ul>
         </div>
-        {% block content %}
-            
-        {% endblock %}
-    </body>
+    </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh; padding-top: 70px;">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
 </html>
+

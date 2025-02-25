@@ -5,6 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Ooops!</h1>
-    <h2>I cannot find the file you requested!</h2>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="card text-center p-5 shadow-lg">
+            <div class="card-body">
+                <h1 class="display-4 text-danger">Ooops!</h1>
+                <h2 class="card-title">I cannot find the file you requested!</h2>
+                <p class="card-text">It seems like the page you're looking for doesn't exist. Please check the URL or go back to the homepage.</p>
+                <a href="/" class="btn btn-primary">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

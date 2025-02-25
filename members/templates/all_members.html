@@ -5,12 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <div class="mycard">
-        <h1>List of all members</h1>
-        <ul>
-        {% for x in mymembers %}
-            <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
-        {% endfor %}
-        </ul>
+    <div class="card my-4">
+        <div class="card-header">
+            <h1 class="card-title">List of all members</h1>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+            {% for x in mymembers %}
+                <li class="list-group-item list-group-item-action" onclick="window.location = 'details/{{ x.slug }}'">
+                    {{ x.firstname }} {{ x.lastname }}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}
