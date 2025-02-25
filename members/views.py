@@ -1,5 +1,5 @@
 from django.template import loader
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, Http404
 from .models import Member
 
 def members(request):
@@ -11,12 +11,15 @@ def members(request):
     return HttpResponse(template.render(context, request))
 
 def details(request, id):
-    mymember = Member.objects.get(id=id)
-    template = loader.get_template('details.html')
-    context = {
-        'mymember': mymember,
-    }
-    return HttpResponse(template.render(context, request))
+    try:
+        mymember = Member.objects.get(id=id)
+        template = loader.get_template('details.html')
+        context = {
+            'mymember': mymember,
+        }
+        return HttpResponse(template.render(context, request))
+    except Member.DoesNotExist:
+        raise Http404("Member not found")       
 
 def main(request):
     template = loader.get_template('main.html')

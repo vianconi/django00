@@ -1,10 +1,16 @@
 {% extends 'master.html' %}
+{% load static %}
 
 {% block title %}
     Test
 {% endblock %}
 
+{% block head %}
+    
+{% endblock %}
+
 {% block content %}
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
     <ul>
         {% for x in mymembers %}
             <h1>{{ x.firstname }}</h1>
